@@ -1,0 +1,22 @@
+Recommended execution order for the 11-module pipeline:
+
+  01_module1_integration/module1.R      # ComBat batch correction
+  02_module2_brain_DEG/module2.R         # Brain DEG + permutation
+  03_module3_MR/module3.R                # Mendelian randomization
+  04_module4_subtyping/module4.R         # Consensus clustering
+  05_module5_prediction/module5.R        # Random Forest training
+  06_module6_validation/module6.R        # Nested CV + DCA
+  07_module7_functional/module7.R        # Pathway enrichment
+  08_module8_celltype/module8.R          # Brain cell-type overlap
+  09_module9_immune/module9.R            # ssGSEA deconvolution
+  10_module10_eQTL_MR/module10.R        # GTEx tissue-stratified MR
+  11_module11_regulation/module11.R     # TLN2/CCK regulatory model
+
+Improvement modules (supplementary):
+  improvements/00_run_all.R               # Master runner
+  improvements/module1_comdat/            # ComBat diagnostics
+  improvements/module2_permutation/       # Permutation + power
+  improvements/module3_MR/                # MR methodological details
+  improvements/module5_prediction/        # Model audit
+  improvements/module6_validation/        # External validation
+  improvements/module8_celltype/          # BH correction analysis
